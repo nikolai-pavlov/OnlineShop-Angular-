@@ -1,0 +1,28 @@
+@import "variables";
+@import "variables";
+
+.personal-title{
+  @include head-lora-32;
+  margin-bottom: 30px;
+}
+
+.personal-page-selector{
+  margin-bottom: 50px;
+  color: $green-text-color;
+  font-family: 'Lora', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+
+  .personal-page{
+    border-bottom: 2px solid #B6D5B9;
+    padding: 0 15px 12px;
+    cursor: pointer;
+
+    &.active {
+      border-bottom: 3px solid #519057
+    }
+  }
+
+}

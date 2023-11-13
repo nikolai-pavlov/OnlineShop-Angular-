@@ -1,0 +1,45 @@
+<section class="signup" [formGroup]="signUpForm" passwordRepeat>
+  <div class="container">
+    <div class="auth-form">
+      <div class="auth-title">
+        Регистрация на сайте
+      </div>
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color': signUpForm.get('email')?.invalid
+                 && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched) ? 'red' :''}"
+                 placeholder="Электронная почта" formControlName="email">
+        </div>
+        <div class="auth-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color': signUpForm.get('password')?.invalid
+                 && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched) ? 'red' :''}"
+                 placeholder="Пароль" formControlName="password">
+        </div>
+        <div class="auth-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color': signUpForm.get('passwordRepeat')?.invalid
+                 && (signUpForm.get('passwordRepeat')?.dirty || signUpForm.get('passwordRepeat')?.touched) ? 'red' :''}"
+                 placeholder="Повторите пароль" formControlName="passwordRepeat">
+        </div>
+        <div class="auth-checkbox">
+          <input type="checkbox" id="agree" formControlName="agree">
+          <label for="agree">
+            Я принимаю <a href="">условия пользовательского соглашения</a> и даю <a href="">согласие на обработку
+            персональных данных</a>.
+          </label>
+        </div>
+      </div>
+      <div class="auth-button">
+        <button class="button" [disabled]="signUpForm.invalid" (click)="signup()">Зарегистрироваться</button>
+      </div>
+      <div class="auth-link">
+        Уже есть аккаунт?<a routerLink="/login">Войдите</a>
+      </div>
+    </div>
+    <div class="page-image">
+      <img src="/assets/images/page/signup.png" alt="Flower">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,101 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/data-form";
+
+.order {
+  padding-top: 86px;
+  padding-bottom: 107px;
+
+  .container {
+
+    .order-title {
+      @include head-lora-32;
+    }
+
+    .order-info {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .order-details {
+        width: 422px;
+
+        .order-details-info {
+          border-radius: 5px;
+          background: var(--light-green-light, #E7F1E8);
+          padding: 40px;
+          margin-bottom: 14px;
+
+          .order-details-info-title {
+            color: $green-text-color;
+            font-family: 'Lora', sans-serif;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 400;
+            margin-bottom: 20px;
+          }
+
+          .order-details-info-item {
+            display: flex;
+            align-items: center;
+            color: $grey-text-color;
+            margin-bottom: 10px;
+
+            .order-details-info-item-text {
+              font-size: 16px;
+              margin-right: 12px;
+            }
+
+            .order-details-info-item-data {
+              font-size: 20px;
+              font-weight: 500;
+              font-family: 'Montserrat', sans-serif;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+
+              .order-details-info-item-text,
+              .order-details-info-item-data {
+                font-weight: 600;
+                font-family: 'Montserrat', sans-serif;
+              }
+            }
+          }
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.order-popup{
+  padding: 100px 70px 220px;
+  position: relative;
+  text-align: center;
+  color: $green-text-color;
+  background-image: url("../../../../assets/images/page/order-image.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+  .order-popup-close{
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+  }
+
+  .order-popup-title{
+    @include head-lora-32;
+    margin-bottom: 40px;
+  }
+
+  .order-popup-content div{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
+

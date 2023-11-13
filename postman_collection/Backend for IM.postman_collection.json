@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "02d2ea1e-975c-4d16-a844-6f9d08f011a1",
+		"name": "Backend for IM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5916083"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"12345678\",\n    \"rememberMe\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Новый\",\n    \"lastName\": \"Пользователь\",\n    \"email\": \"roma2n@itlogia.ru\",\n    \"password\": \"12345678Qq\",\n    \"passwordRepeat\": \"12345678Qq\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODRkZjY3Mjc1ZDM2NzM0NTBhNDJiOSIsImVtYWlsIjoicm9tYTJuQGl0bG9naWEucnUiLCJpYXQiOjE2Njk2NTI2NTMsImV4cCI6MTY3MjI0NDY1M30.mqswedyoOuv2Y3oJopdwET9e9o4f5YmHRw9pTgU25LI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODRkZjY3Mjc1ZDM2NzM0NTBhNDJiOSIsImVtYWlsIjoicm9tYTJuQGl0bG9naWEucnUiLCJpYXQiOjE2Njk2NTI2NTMsImV4cCI6MTY3MjI0NDY1M30.mqswedyoOuv2Y3oJopdwET9e9o4f5YmHRw9pTgU25LI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Types",
+			"item": [
+				{
+					"name": "Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTY4MTgsImV4cCI6MTY3MDY2MDgxOH0.putjI_1fb412B_-2gNDu1nbkIGRy3VdE8bFOgMghBk8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTY4MTgsImV4cCI6MTY3MDY2MDgxOH0.putjI_1fb412B_-2gNDu1nbkIGRy3VdE8bFOgMghBk8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTY4MTgsImV4cCI6MTY3MDY2MDgxOH0.putjI_1fb412B_-2gNDu1nbkIGRy3VdE8bFOgMghBk8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":\"638672d5257c18cd625190ea\",\n    \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart clear",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODUyZDgxZmYyYmMyODg5MTNjMGYyOSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3Mzc2MTEsImV4cCI6MTY3MDYwMTYxMX0.QZ7iVcL4dWM5Dhr_UA9FhyFTTj4CmIP0frhTapFD_rk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "Favorites",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3NTY0MjAsImV4cCI6MTY3MDYyMDQyMH0.ah5lE8wVAuXbHQaLiu_RHWdDjdubBb9e9wiKhvDvYHw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favorite remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3NTY0MjAsImV4cCI6MTY3MDYyMDQyMH0.ah5lE8wVAuXbHQaLiu_RHWdDjdubBb9e9wiKhvDvYHw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"638672d5257c18cd625190ea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/favorites/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favorite Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3NTY0MjAsImV4cCI6MTY3MDYyMDQyMH0.ah5lE8wVAuXbHQaLiu_RHWdDjdubBb9e9wiKhvDvYHw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"638672d5257c18cd625190ea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products?types[]=kaktusi&types[]=sukkulenti&diameterTo=13&types[]=ekheverii&types[]=tsvetushchie_komnatnie_rasteniya",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "types[]",
+									"value": "kaktusi"
+								},
+								{
+									"key": "types[]",
+									"value": "sukkulenti"
+								},
+								{
+									"key": "heightFrom",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "heightTo",
+									"value": "21",
+									"disabled": true
+								},
+								{
+									"key": "diameterFrom",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "diameterTo",
+									"value": "13"
+								},
+								{
+									"key": "sort",
+									"value": "price-desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "types[]",
+									"value": "ekheverii"
+								},
+								{
+									"key": "types[]",
+									"value": "tsvetushchie_komnatnie_rasteniya"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/search?query=вера",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "вера"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Best Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/best",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"best"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/tsvetushchie_mammilyarii",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"tsvetushchie_mammilyarii"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTc0NzAsImV4cCI6MTY3MDY2MTQ3MH0.2UG_vDnvPJoYhcio9ejqH7XTYvEHNNGAdAv-n6SyxPE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deliveryType\": \"delivery\",\n    \"firstName\": \"Теста\",\n    \"lastName\": \"Тестовик\",\n    \"phone\": \"+375295756462\",\n    \"paymentType\": \"cashToCourier\",\n    \"email\": \"tewsst@gmail.com\",\n    \"street\": \"Рафиева\",\n    \"house\": \"22\",\n    \"entrance\": \"1\",\n    \"apartment\": \"134\",\n    \"comment\": \"Позвоните мне пожалуйста!!!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTY4MTgsImV4cCI6MTY3MDY2MDgxOH0.putjI_1fb412B_-2gNDu1nbkIGRy3VdE8bFOgMghBk8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update Personal Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTc0NzAsImV4cCI6MTY3MDY2MTQ3MH0.2UG_vDnvPJoYhcio9ejqH7XTYvEHNNGAdAv-n6SyxPE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deliveryType\": \"delivery\",\n    \"firstName\": \"Ттестовый\",\n    \"lastName\": \"Тестовик\",\n    \"phone\": \"+375295756462\",\n    \"paymentType\": \"cashToCourier\",\n    \"email\": \"tewsst@gmail.com\",\n    \"street\": \"Рафиева\",\n    \"house\": \"22\",\n    \"apartment\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Personal Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY3MmQ0MjU3YzE4Y2Q2MjUxOTBkMiIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2Njk3OTc0NzAsImV4cCI6MTY3MDY2MTQ3MH0.2UG_vDnvPJoYhcio9ejqH7XTYvEHNNGAdAv-n6SyxPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

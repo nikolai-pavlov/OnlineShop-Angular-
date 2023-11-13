@@ -1,0 +1,236 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.main {
+  background-image: url("../../../assets/images/page/main.png");
+  background-repeat: no-repeat;
+  background-position-x: calc(50% + 210px);
+  padding-top: 58px;
+  padding-bottom: 231px;
+
+  .container {
+    .main-title {
+      font-family: 'Lora', sans-serif;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 130%;
+      color: #2A592E;
+      margin-bottom: 67px;
+    }
+
+    .main-text {
+      color: $green-text-color;
+      font-size: 18px;
+      line-height: 140%;
+      max-width: 528px;
+    }
+  }
+}
+
+.offers {
+  background-color: #A4CBA3;
+  padding: 80px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .offer {
+      width: 600px;
+      height: 250px;
+      padding: 35px 35px 0 35px;
+      border-radius: 5px;
+      background: var(--white, #FFF);
+      box-sizing: border-box;
+
+      .offer-title {
+        color: $green-text-color;
+        font-size: 20px;
+        line-height: 130%;
+      }
+
+      .offer-content {
+        display: flex;
+
+        .offer-text {
+          color: $green-text-color;
+          font-size: 16px;
+          line-height: 130%; /* 26px */
+        }
+      }
+
+      &.offer-insta {
+        .offer-image {
+          margin-top: 35px;
+        }
+
+        .offer-text {
+          margin-top: 16px;
+          max-width: 234px;
+          margin-left: 58px;
+        }
+
+        .offer-button {
+          margin-left: 168px;
+          margin-top: 22px;
+
+          .button {
+            width: 228px;
+          }
+        }
+      }
+
+      &.offer-collection {
+        .offer-title {
+          max-width: 362px;
+        }
+
+        .offer-image {
+          margin-top: 12px;
+          margin-left: 81px;
+        }
+
+        .offer-button {
+          margin-top: 75px;
+          margin-left: 44px;
+
+          .button {
+            width: 177px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.best-products {
+  padding-top: 120px;
+  padding-bottom: 130px;
+}
+
+.info {
+  background-color: #A4CBA3;
+  background-image: url("../../../assets/images/page/info-bg.png");
+  background-repeat: no-repeat;
+  background-position-x: calc(50% + 340px);
+  padding: 80px 0;
+
+  .container {
+    .info-title {
+      @include head-lora-32;
+      margin-bottom: 5px;
+    }
+
+    .info-item {
+      margin-top: 35px;
+      color: #000;
+      max-width: 442px;
+
+      .info-image {
+        margin-bottom: 30px;
+      }
+
+      .info-text {
+        font-size: 16px;
+
+        .info-text-extra {
+          font-family: 'Montserrat', sans-serif;
+          font-style: italic;
+          font-weight: 300;
+          line-height: 130%;
+          margin-top: 8px;
+        }
+      }
+
+      &.info-delivery {
+        .info-text:last-child {
+          margin-top: 16px;
+        }
+      }
+
+      &.info-payment {
+        .info-text {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-top: 130px;
+  margin-bottom: 130px;
+
+  .container {
+    .reviews-title {
+      @include head-lora-32;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+
+      .review-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border-radius: 10px;
+        border: 2px solid #2A592E;
+        box-sizing: border-box;
+
+        .review-item-head {
+          display: flex;
+          align-items: center;
+
+          .review-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .review-item-name {
+            color: $green-text-color;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+
+        .review-item-text {
+          margin-top: 15px;
+          color: $grey-text-color;
+          font-size: 16px;
+          line-height: 140%;
+        }
+      }
+
+      .reviews-arrows{
+        display: flex;
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+          &.move-backward {
+            left: -41px;
+          }
+          &.move-forward {
+            right: -41px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.map iframe {
+  vertical-align:bottom;
+}

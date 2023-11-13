@@ -1,0 +1,111 @@
+@import "mixins";
+@import "variables";
+
+.data-form {
+  max-width: 646px;
+
+    .data-form-block {
+    margin-bottom: 30px;
+
+      .data-form-label {
+      margin-bottom: 20px;
+      color: $grey-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+      .data-form-label-additional{
+        max-width: 528px;
+        font-size: 16px;
+        line-height: 130%;
+        color: $grey-text-color;
+        margin-bottom: 20px;
+      }
+
+      .data-form-types {
+      display: flex;
+      align-items: center;
+      max-width: 340px;
+      box-sizing: border-box;
+      border: 1px solid #519057;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 18px;
+      color: $grey-text-color;
+
+        .data-form-type-item {
+        padding: 13px 35px;
+        cursor: pointer;
+        background: transparent;
+
+        &.active {
+          color: #FFFFFF;
+          background-color: #519057;
+        }
+      }
+    }
+
+      .data-form-inputs {
+      display: grid;
+      gap: 8px;
+
+      input[type=text] {
+        height: 53px;
+      }
+
+      &.personal-data-inputs {
+        grid-template-columns:repeat(3, 210px);
+      }
+
+      &.address-inputs {
+        grid-template-columns:repeat(2, 125px) 162px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+              "street street street"
+              "house entrance apartment";
+
+        .street {
+          grid-area: street;
+        }
+
+        .house {
+          grid-area: house;
+        }
+
+        .entrance {
+          grid-area: entrance;
+        }
+
+        .apartment {
+          grid-area: apartment;
+        }
+      }
+    }
+
+      .data-form-radio {
+
+        .data-form-radio-block {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        label {
+          color: $grey-text-color;
+          font-size: 16px;
+        }
+
+        input:checked {
+          + label {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
